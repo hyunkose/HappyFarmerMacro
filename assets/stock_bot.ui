@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1468</width>
+    <height>952</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Stock Trader Bot</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="info_group">
+    <property name="geometry">
+     <rect>
+      <x>345</x>
+      <y>530</y>
+      <width>1091</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1121</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>매수 종목 실시간 현황</string>
+    </property>
+    <widget class="QTableWidget" name="bought_info_table">
+     <property name="geometry">
+      <rect>
+       <x>18</x>
+       <y>51</y>
+       <width>1051</width>
+       <height>291</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>21</y>
+       <width>1021</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>※ 긴급 손절 장치: 60 이평과의 골든크로스 확인 후 종목 매수 후, 가격 급락 발생 시 자동 발동됩니다</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="sell_group">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>782</y>
+      <width>311</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>최소 수익률 조건 (자동 지정 = 2%)</string>
+    </property>
+    <layout class="QFormLayout" name="formLayout_3">
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;수익률 (%)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="stock_profit_rate"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="sell_option_save">
+       <property name="text">
+        <string>선택 저장</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="profit_rate_stock_code"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>종목코드</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="server_info_group">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>81</y>
+      <width>311</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>접속서버</string>
+    </property>
+    <widget class="QLabel" name="server_label">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>24</y>
+       <width>291</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;알 수 없음&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="account_group">
+    <property name="geometry">
+     <rect>
+      <x>19</x>
+      <y>145</y>
+      <width>311</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>접속계좌</string>
+    </property>
+    <widget class="QLabel" name="account_label">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>24</y>
+       <width>291</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;알 수 없음&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="logo_image">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>20</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>logo_image</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logo_title">
+    <property name="geometry">
+     <rect>
+      <x>89</x>
+      <y>31</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-weight: bold;
+font-size: 16px;</string>
+    </property>
+    <property name="text">
+     <string>Happy Farmer</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="waitlist_group">
+    <property name="geometry">
+     <rect>
+      <x>345</x>
+      <y>82</y>
+      <width>1091</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1121</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>매수 대기 종목</string>
+    </property>
+    <widget class="QTableWidget" name="waitlitst_table">
+     <property name="geometry">
+      <rect>
+       <x>19</x>
+       <y>23</y>
+       <width>1051</width>
+       <height>391</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="buy_group">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>470</y>
+      <width>311</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>매수 종목 추가</string>
+    </property>
+    <layout class="QFormLayout" name="formLayout_4">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;종목코드&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="buy_stock_input"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="buy_stock_save">
+       <property name="text">
+        <string>종목 추가</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="buy_stock_delete">
+       <property name="text">
+        <string>종목 삭제</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;손절가&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="loss_cut_price"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="takeaway_group">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>208</y>
+      <width>311</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>예수금 (D+2)</string>
+    </property>
+    <widget class="QLabel" name="takeaway_label">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>50</y>
+       <width>291</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;알 수 없음&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="takeaway_info_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>291</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>※ 전체 예수금의 알 수 없음%만 트레이딩에 쓰입니다</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="reserve_group">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>293</y>
+      <width>311</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>예비금 비중 (자동 지정 = 0%)</string>
+    </property>
+    <widget class="QDoubleSpinBox" name="reserve_money_select">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>23</y>
+       <width>211</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>23</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>비중 (%)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="reserver_money_save">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>51</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>변경 완료</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="desired_num_stocks_group">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>380</y>
+      <width>311</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>구매 희망 종목 수 (자동 지정 = 1개)</string>
+    </property>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>13</x>
+       <y>23</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>종목 수 (개)</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="desired_num_stocks_save">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>51</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>변경 완료</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="desired_num_stocks">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>23</y>
+       <width>211</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="loss_cut_group">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>590</y>
+      <width>311</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 12px;</string>
+    </property>
+    <property name="title">
+     <string>손절가 변경</string>
+    </property>
+    <layout class="QFormLayout" name="formLayout_5">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;종목코드&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="loss_cut_stock_code"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="loss_cut_save">
+       <property name="text">
+        <string>변경 완료</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;손절가&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="loss_cut_change"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="emergency_sell_group">
+    <property name="geometry">
+     <rect>
+      <x>21</x>
+      <y>710</y>
+      <width>311</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>긴급 자동 손절모드 On/Off </string>
+    </property>
+    <widget class="QRadioButton" name="emergency_sell_on">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>90</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>On</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="emergency_sell_off">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>29</y>
+       <width>90</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Off</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1468</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
